@@ -39,9 +39,8 @@ public class CountryController {
     public List<Country> getCountriesCon(@RequestParam Continent con){
         return countryService.filterCountriesByCon(con.toString());
     }
-
-
-
-
-
+    @GetMapping("/getMost")
+    public Country getCountriesMost(){
+        return countryService.filterCountriesMost();
+    }
 }

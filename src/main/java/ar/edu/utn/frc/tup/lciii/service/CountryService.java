@@ -110,6 +110,20 @@ public class CountryService {
         private CountryDTO mapToDTO(Country country) {
                 return new CountryDTO(country.getCode(), country.getName());
         }
+    public Country filterCountriesMost() {
+        List<Country> countries = this.getAllCountries();
+        Iterator<Country> it = countries.iterator();
+        Country co = new Country();
+        Integer most = 0;
+        while (it.hasNext()){
+            Integer current = it.next().getBorders().size();
+            if(current > most){
+                co = it.next();
+                most = current;
+            }
+        }
+        return co;
+    }
 
 
 }
