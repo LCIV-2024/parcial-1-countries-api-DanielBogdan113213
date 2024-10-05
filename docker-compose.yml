@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  countries:
+    image: countries
+    build: .
+    ports:
+      - "8080:8080"
+    # Aquí puedes agregar otras configuraciones, como volúmenes o variables de entorno
+    #networks:
+    #  - my_network
+
+#networks:
+#  my_network:
